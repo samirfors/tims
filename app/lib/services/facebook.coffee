@@ -7,14 +7,9 @@ mediator = Chaplin.mediator
 
 module.exports = class Facebook extends ServiceProvider
 
-  # Note: This is the ID for an example Facebook app.
-  # You might change this to your own application ID.
-  # See https://developers.facebook.com/apps
+  # Note: This is the ID for the TIMStest app. Change it later.
   facebookAppId = '361776557246197'
 
-  # The permissions we’re asking for.
-  # See https://developers.facebook.com/docs/reference/api/permissions/
-  # In this demo application, we would like to access the user’s likes.
   scope = 'read_stream'
 
   name: 'facebook'
@@ -49,7 +44,7 @@ module.exports = class Facebook extends ServiceProvider
     window.fbAsyncInit = @loadHandler
 
     # No success callback, there’s fbAsyncInit
-    utils.loadLib 'http://connect.facebook.net/en_US/all.js', null, @reject
+    utils.loadLib '//connect.facebook.net/en_US/all.js', null, @reject
 
   # The main callback for the Facebook library
   loadHandler: =>
@@ -60,13 +55,13 @@ module.exports = class Facebook extends ServiceProvider
     catch error
       window.fbAsyncInit = undefined
 
+    @registerHandlers()
+
     FB.init
       appId:  facebookAppId
       status: true
       cookie: true
       xfbml:  false
-
-    @registerHandlers()
 
     # Resolve the Deferred
     @resolve()

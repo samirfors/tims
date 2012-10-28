@@ -13,8 +13,6 @@ module.exports = class LoginView extends View
     super
     @initButtons options.serviceProviders
 
-  # In this project we currently only have one service provider and therefore
-  # one button. But this should allow for different service providers.
   initButtons: (serviceProviders) ->
     for serviceProviderName, serviceProvider of serviceProviders
       buttonSelector = ".#{serviceProviderName}"

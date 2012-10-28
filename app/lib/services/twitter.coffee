@@ -24,7 +24,7 @@ module.exports = class Twitter extends ServiceProvider
     return if @state() is 'resolved' or @loading
     @loading = true
 
-    utils.loadLib "http://platform.twitter.com/anywhere.js?id=#{consumerKey}&v=1", @sdkLoadHandler, @reject
+    utils.loadLib "//platform.twitter.com/anywhere.js?id=#{consumerKey}&v=1", @sdkLoadHandler, @reject
 
   sdkLoadHandler: =>
     @loading = false
