@@ -1,7 +1,7 @@
 mediator = require 'mediator'
 Facebook = require 'lib/services/facebook'
 Twitter = require 'lib/services/twitter'
-Google = require 'lib/services/google'
+#Google = require 'lib/services/google'
 Controller = require 'controllers/base/controller'
 User = require 'models/user'
 LoginView = require 'views/login_view'
@@ -13,7 +13,7 @@ module.exports = class SessionController extends Controller
   @serviceProviders = {
     facebook: new Facebook()
     twitter: new Twitter()
-    google: new Google()
+    #google: new Google()
   }
 
   # Was the login status already determined?
