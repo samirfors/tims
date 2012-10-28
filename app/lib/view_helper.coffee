@@ -37,3 +37,13 @@ Handlebars.registerHelper 'without', (context, options) ->
 Handlebars.registerHelper 'with_user', (options) ->
   context = mediator.user or {}
   Handlebars.helpers.with.call(this, context, options)
+
+
+# URL helpers
+# -----------
+
+# Facebook image URLs
+Handlebars.registerHelper 'fb_img_url', (fbId, type) ->
+  new Handlebars.SafeString utils.facebookImageURL(fbId, type)
+
+null

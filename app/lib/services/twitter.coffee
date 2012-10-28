@@ -16,6 +16,10 @@ module.exports = class Twitter extends ServiceProvider
     super
     @subscribeEvent '!logout', @logout
 
+
+  load: ->
+    @loadSDK()
+
   loadSDK: ->
     return if @state() is 'resolved' or @loading
     @loading = true
