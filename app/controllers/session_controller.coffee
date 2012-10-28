@@ -1,4 +1,7 @@
 mediator = require 'mediator'
+Facebook = require 'lib/services/facebook'
+Twitter = require 'lib/services/twitter'
+Google = require 'lib/services/google'
 Controller = require 'controllers/base/controller'
 User = require 'models/user'
 LoginView = require 'views/login_view'
@@ -8,7 +11,9 @@ module.exports = class SessionController extends Controller
   # This just hardcoded here to avoid async loading of service providers.
   # In the end you might want to do this.
   @serviceProviders = {
-    # facebook: new Facebook()
+    facebook: new Facebook()
+    twitter: new Twitter()
+    google: new Google()
   }
 
   # Was the login status already determined?
