@@ -3,4 +3,11 @@ Installing dependencies
 
 Run `git submodule update --init --recursive && npm install`.
 
-Then use `brunch`.
+Then use `brunch watch -s` while developing.
+
+
+
+Credits
+=======
+* A lot of the code is copy-pasted from various examples at
+  http://chaplinjs.github.com/
